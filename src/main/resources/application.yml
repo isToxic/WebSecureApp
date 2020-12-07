@@ -1,0 +1,70 @@
+spring:
+  h2:
+    console:
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+  datasource:
+    platform: h2
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:AZ
+    username: h2
+    password: ${DB_PASSWORD}
+    initialization-mode: always
+  jpa:
+    database: H2
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+is-toxic:
+  index-resource-name: welcomePage
+  admin-resource-name: adminPage
+  user-resource-name: userInfoPage
+  login-resource-name: loginPage
+  logout-resource-name: logoutSuccessfulPage
+  forbidden-resource-name: 403Page
+  registration-resource-name: regPage
+  login-mapping: /login
+  index-mapping:
+    - /
+    - /welcome
+    - /index
+  logout-mapping: /logout
+  user-mapping: /userInfo
+  admin-mapping: /admin
+  registration-mapping: /registration
+  success-logout-mapping: /logoutSuccessful
+  success-forward-mapping: /userInfo
+  forbidden-mapping: /403
+  login-processing-url: /j_spring_security_check
+  login-param-username: username
+  login-param-password: password
+  login-mapping-error: /login?error
+  token-lifetime-seconds: 3600
+  mapping-permissions:
+    - mapping: '/admin'
+      roles:
+        - ADMIN
+    - mapping: '/userInfo'
+      roles:
+        - USER
+        - ADMIN
+    - mapping: '/'
+      roles:
+        - permitAll
+    - mapping: '/login'
+      roles:
+        - permitAll
+    - mapping: '/logout'
+      roles:
+        - permitAll
+
+
