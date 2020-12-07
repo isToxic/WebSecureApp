@@ -1,4 +1,4 @@
-package is.toxic.controller;
+package is.toxic.webApp.controller;
 
 import is.toxic.entity.AppUser;
 import is.toxic.service.UserDetailsServiceImpl;

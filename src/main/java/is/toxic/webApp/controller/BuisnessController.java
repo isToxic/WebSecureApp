@@ -1,4 +1,4 @@
-package is.toxic.controller;
+package is.toxic.webApp.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
