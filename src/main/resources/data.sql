@@ -22,6 +22,8 @@ values (1, 'dbadmin1', '$2a$10$PrI5Gk9L.tSZiW9FXhTS8O8Mz9E97k2FZbFvGFFaSsiTUIl.T
 insert into app_role (ROLE_ID, ROLE_NAME)
 values (1, 'ROLE_ADMIN');
 
+insert into app_role (ROLE_ID, ROLE_NAME)
+values (2, 'ROLE_USER');
 ---
 
 insert into user_role (ID, USER_ID, ROLE_ID)
